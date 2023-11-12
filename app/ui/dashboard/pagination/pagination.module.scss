@@ -1,14 +1,14 @@
-.container{
+.pagination{
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.button{
+.pagination__button{
   padding: 5px 10px;
   cursor: pointer;
 }
 
-.button:disabled{
+.pagination__button:disabled{
   cursor: not-allowed;
 }

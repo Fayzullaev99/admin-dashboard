@@ -1,4 +1,4 @@
-.container {
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,10 +6,10 @@
   color: var(--textSoft);
 }
 
-.logo {
+.footer__logo {
   font-weight: bold;
 }
 
-.text {
+.footer__text {
   font-size: 12px;
 }

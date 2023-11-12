@@ -1,4 +1,4 @@
-.container {
+.menu {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
   border-radius: 10px;
 }
 
-.container:hover,
+.menu:hover,
 .active {
   background-color: #2e374a;
 }

@@ -1,38 +1,38 @@
-.container {
+.dashboard {
   display: flex;
 }
 
-.menu {
+.dashboard__menu {
   flex: 1;
   background-color: var(--bgSoft);
   padding: 20px;
   min-height: 100vh;
 }
 
-.content {
+.dashboard__content {
   flex: 4;
   padding: 20px;
 }
 
-.wrapper {
+.dashboard__wrapper {
   display: flex;
   gap: 20px;
   margin-top: 20px;
 }
 
-.main {
+.dashboard__main {
   flex: 3;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.cards {
+.dashboard__cards {
   display: flex;
   gap: 20px;
   justify-content: space-between;
 }
 
-.side {
+.dashboard__rightSide {
   flex: 1;
 }

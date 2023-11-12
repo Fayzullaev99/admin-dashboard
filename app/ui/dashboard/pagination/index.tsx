@@ -1,9 +1,49 @@
+"use client";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from './pagination.module.scss'
 
-function Pagination() {
+type PaginationProps = {
+  count: number;
+}
+
+function Pagination({ count }: PaginationProps): JSX.Element {
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+
+  const page = searchParams.get("page") || "1";
+
+  const params = new URLSearchParams(searchParams);
+  const ITEM_PER_PAGE = 2;
+
+  const hasPrev = ITEM_PER_PAGE * (parseInt(page) - 1) > 0;
+  const hasNext = ITEM_PER_PAGE * (parseInt(page) - 1) + ITEM_PER_PAGE < count;
+
+  const handleChangePage = (type: "prev" | "next"): void => {
+    type === "prev"
+      ? params.set("page", String(parseInt(page) - 1))
+      : params.set("page", String(parseInt(page) + 1));
+    replace(`${pathname}?${params}`);
+  };
+
   return (
-    <div>Pagination</div>
+    <div className={styles.pagination}>
+      <button
+        className={styles.pagination__button}
+        disabled={!hasPrev}
+        onClick={() => handleChangePage("prev")}
+      >
+        Previous
+      </button>
+      <button
+        className={styles.pagination__button}
+        disabled={!hasNext}
+        onClick={() => handleChangePage("next")}
+      >
+        Next
+      </button>
+    </div>
   )
 }
 
-export default Pagination
+export default Pagination;

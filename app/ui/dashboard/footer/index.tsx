@@ -1,8 +1,11 @@
 import styles from './footer.module.scss'
 
-function Footer() {
+function Footer():JSX.Element {
   return (
-    <div>Footer</div>
+    <footer className={styles.footer}>
+      <div className={styles.footer__logo}>Sanjar Administrator</div>
+      <div className={styles.footer__text}>© All rights reserved.</div>
+    </footer>
   )
 }
 
