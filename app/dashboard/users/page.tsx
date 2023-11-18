@@ -4,6 +4,7 @@ import Search from "@/app/ui/dashboard/search";
 import Pagination from "@/app/ui/dashboard/pagination";
 import styles from './users.module.scss'
 import { fetchUsers } from "@/app/lib/data";
+import { deleteUser } from "@/app/lib/actions";
 
 type UsersPageProps = {
   searchParams:any

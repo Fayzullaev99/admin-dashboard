@@ -1,14 +1,15 @@
 import { Document, model, Schema } from "mongoose";
 import { connectToDB } from "./utils";
-interface UserDocument extends Document {
+import { User } from "./models";
+ export interface UserDocument extends Document {
   username: string;
   // Add other fields as needed
 }
 
-const User = model<UserDocument>("User", new Schema<UserDocument>({
-  username: String,
-  // other fields
-}));
+// const User = model<UserDocument>("User", new Schema<UserDocument>({
+//   username: String,
+//   // other fields
+// }));
 
 interface FetchUsersResult {
   count: number;
